@@ -1,5 +1,4 @@
-import { Download } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import DownloadButton from './DownloadButton';
 
 const CVSection = () => {
   const experiencia = [
@@ -59,12 +58,10 @@ const CVSection = () => {
               Currículum
             </h2>
           </div>
-          <Button variant="outline" size="sm" className="gap-2" asChild>
-            <a href="/cv-santiago-abia.pdf" download>
-              <Download className="w-4 h-4" />
-              Descargar CV
-            </a>
-          </Button>
+          <DownloadButton 
+            href="/cv-santiago-abia.pdf" 
+            label="Descargar CV"
+          />
         </div>
 
         <div className="grid md:grid-cols-2 gap-16 md:gap-24">
