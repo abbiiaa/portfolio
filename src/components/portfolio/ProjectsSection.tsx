@@ -1,4 +1,4 @@
-import { ExternalLink } from 'lucide-react';
+import DownloadButton from './DownloadButton';
 
 const ProjectsSection = () => {
   const proyectos = [
@@ -9,6 +9,7 @@ const ProjectsSection = () => {
         'Configuración y administración de servidores EC2 en Amazon Web Services mediante conexión SSH. Incluye gestión de claves PEM, configuración de Security Groups, instalación de servicios web y buenas prácticas de seguridad en la nube.',
       tecnologias: ['AWS EC2', 'SSH', 'Ubuntu Server', 'VirtualBox', 'WSL2'],
       rol: 'Administrador de sistemas',
+      documento: '/docs/proyecto-aws.pdf',
     },
     {
       numero: '02',
@@ -17,6 +18,7 @@ const ProjectsSection = () => {
         'Implementación de fail2ban para proteger servicios SSH contra ataques de fuerza bruta. Configuración de reglas de bloqueo automático, monitorización de logs de autenticación y gestión de IPs maliciosas.',
       tecnologias: ['Fail2ban', 'Linux', 'SSH', 'iptables', 'Logs'],
       rol: 'Administrador de seguridad',
+      documento: '/docs/proyecto-fail2ban.pdf',
     },
     {
       numero: '03',
@@ -25,6 +27,7 @@ const ProjectsSection = () => {
         'Proyecto integral de configuración de redes incluyendo diseño de topología, configuración de dispositivos de red, segmentación con VLANs y documentación técnica del proceso.',
       tecnologias: ['Cisco Packet Tracer', 'Networking', 'VLANs', 'Routing'],
       rol: 'Técnico de redes',
+      documento: '/docs/proyecto-redes-ut6.pdf',
     },
   ];
 
@@ -81,13 +84,11 @@ const ProjectsSection = () => {
                     </div>
                   </div>
 
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
-                  >
-                    Ver documentación
-                    <ExternalLink className="w-3 h-3" />
-                  </a>
+                  <DownloadButton
+                    href={proyecto.documento}
+                    label="Ver documentación"
+                    variant="ghost"
+                  />
                 </div>
               </div>
 
