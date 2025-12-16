@@ -15,7 +15,7 @@ const PersonalSection = () => {
     >
       <div className="container-wide">
         <div className="mb-16">
-          <span className="tag">03</span>
+          <span className="tag text-gold">03</span>
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tighter mt-2">
             Proyecto Personal
           </h2>
@@ -46,7 +46,12 @@ const PersonalSection = () => {
             </div>
 
             <div className="mt-12">
-              <Button variant="default" size="lg" className="gap-3" asChild>
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="gap-3 border-gold/50 text-gold hover:bg-gold/10 hover:border-gold hover:text-gold transition-all duration-300" 
+                asChild
+              >
                 <a href="#contacto">
                   Ver trabajos de edición
                   <ArrowRight className="w-4 h-4" />

@@ -62,7 +62,7 @@ const CVSection = () => {
       <div className="container-wide">
         <div className="flex items-baseline justify-between mb-16">
           <div>
-            <span className="tag">01</span>
+            <span className="tag text-gold">01</span>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tighter mt-2">
               Currículum
             </h2>
