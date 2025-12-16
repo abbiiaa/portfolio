@@ -1,9 +1,18 @@
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const PersonalSection = () => {
+  const { ref, isVisible } = useScrollAnimation(0.1);
+
   return (
-    <section id="personal" className="section-padding border-t border-border bg-secondary/30">
+    <section 
+      id="personal" 
+      ref={ref as React.RefObject<HTMLElement>}
+      className={`section-padding border-t border-border bg-secondary/30 transition-all duration-700 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}
+    >
       <div className="container-wide">
         <div className="mb-16">
           <span className="tag">03</span>
