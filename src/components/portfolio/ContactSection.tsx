@@ -1,4 +1,4 @@
-import { Mail, Phone, Linkedin } from 'lucide-react';
+import { Mail, Phone, Linkedin, ArrowUp } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const ContactSection = () => {
@@ -35,9 +35,8 @@ const ContactSection = () => {
     >
       <div className="container-narrow">
         <div className="text-center mb-16">
-          <span className="tag text-gold">04</span>
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tighter mt-2">
-            Contacta conmigo
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tighter">
+            <span className="text-gold">Contacta conmigo</span>
           </h2>
           <p className="text-muted-foreground mt-4 max-w-md mx-auto">
             Disponible para oportunidades profesionales y colaboraciones.
@@ -51,10 +50,10 @@ const ContactSection = () => {
               href={item.href}
               target={item.label === 'LinkedIn' ? '_blank' : undefined}
               rel={item.label === 'LinkedIn' ? 'noopener noreferrer' : undefined}
-              className="flex items-center justify-between py-6 border-b border-border group hover:border-gold transition-colors duration-300"
+              className="flex items-center justify-between py-6 border-b border-gold/20 group hover:border-gold transition-colors duration-300"
             >
               <div className="flex items-center gap-4">
-                <item.icon className="w-5 h-5 text-muted-foreground group-hover:text-gold transition-colors duration-300" />
+                <item.icon className="w-5 h-5 text-gold/70 group-hover:text-gold transition-colors duration-300" />
                 <span className="text-sm font-mono text-muted-foreground uppercase tracking-wide">
                   {item.label}
                 </span>
@@ -62,6 +61,17 @@ const ContactSection = () => {
               <span className="text-foreground group-hover:text-gold transition-colors duration-300">{item.value}</span>
             </a>
           ))}
+        </div>
+
+        {/* Back to top */}
+        <div className="flex justify-center mt-16">
+          <a
+            href="#"
+            className="flex items-center gap-2 text-sm text-gold/70 hover:text-gold transition-colors duration-300"
+          >
+            <ArrowUp className="w-4 h-4" />
+            Volver al inicio
+          </a>
         </div>
       </div>
     </section>
