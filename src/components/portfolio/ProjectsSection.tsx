@@ -1,6 +1,9 @@
 import DownloadButton from './DownloadButton';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const ProjectsSection = () => {
+  const { ref, isVisible } = useScrollAnimation(0.1);
+
   const proyectos = [
     {
       numero: '01',
@@ -32,7 +35,13 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section id="proyectos" className="section-padding border-t border-border">
+    <section 
+      id="proyectos" 
+      ref={ref as React.RefObject<HTMLElement>}
+      className={`section-padding border-t border-border transition-all duration-700 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}
+    >
       <div className="container-wide">
         <div className="mb-16">
           <span className="tag">02</span>

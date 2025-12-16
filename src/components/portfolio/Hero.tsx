@@ -1,15 +1,21 @@
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+
 const Hero = () => {
+  const { ref, isVisible } = useScrollAnimation(0.1);
+
   return (
-    <section className="min-h-screen flex items-center justify-center section-padding pt-32">
+    <section 
+      ref={ref as React.RefObject<HTMLElement>}
+      className={`min-h-screen flex items-center justify-center section-padding pt-32 transition-all duration-700 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}
+    >
       <div className="container-narrow text-center">
-        <p className="font-mono text-sm text-muted-foreground mb-6">
-          Técnico en Sistemas Microinformáticos y Redes
-        </p>
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tighter mb-8">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tighter mb-8 text-foreground">
           Santiago Abia Merino
         </h1>
-        <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto leading-relaxed">
-          Configuración de redes, administración de sistemas, mantenimiento de hardware y soporte técnico.
+        <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          Estudiante de Sistemas Microinformáticos y Redes, con conocimientos en configuración de redes, mantenimiento de hardware, administración de sistemas y soporte técnico. Proactivo, con rápida capacidad de aprendizaje y buena adaptación a entornos tecnológicos y de trabajo en equipo.
         </p>
         <div className="mt-12">
           <a

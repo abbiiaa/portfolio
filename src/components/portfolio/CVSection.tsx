@@ -1,6 +1,9 @@
 import DownloadButton from './DownloadButton';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const CVSection = () => {
+  const { ref, isVisible } = useScrollAnimation(0.1);
+
   const experiencia = [
     {
       rol: 'Técnico informático en prácticas',
@@ -49,7 +52,13 @@ const CVSection = () => {
   ];
 
   return (
-    <section id="cv" className="section-padding border-t border-border">
+    <section 
+      id="cv" 
+      ref={ref as React.RefObject<HTMLElement>}
+      className={`section-padding border-t border-border transition-all duration-700 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}
+    >
       <div className="container-wide">
         <div className="flex items-baseline justify-between mb-16">
           <div>
