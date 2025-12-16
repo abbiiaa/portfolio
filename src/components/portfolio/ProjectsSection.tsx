@@ -44,7 +44,7 @@ const ProjectsSection = () => {
     >
       <div className="container-wide">
         <div className="mb-16">
-          <span className="tag">02</span>
+          <span className="tag text-gold">02</span>
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tighter mt-2">
             Proyectos Profesionales
           </h2>
@@ -55,7 +55,7 @@ const ProjectsSection = () => {
             <article key={proyecto.numero} className="group">
               <div className="grid md:grid-cols-12 gap-6 md:gap-8">
                 <div className="md:col-span-1">
-                  <span className="font-mono text-sm text-muted-foreground">
+                  <span className="font-mono text-sm text-gold/70">
                     {proyecto.numero}
                   </span>
                 </div>

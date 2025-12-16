@@ -47,7 +47,7 @@ const DownloadButton = ({
         <p className="text-xs text-muted-foreground">
           Documento no disponible
         </p>
-        <Button variant="outline" size={size} className={`gap-2 ${className}`} asChild>
+        <Button variant="outline" size={size} className={`gap-2 border-gold/40 hover:border-gold hover:text-gold hover:bg-gold/10 transition-all duration-300 ${className}`} asChild>
           <a href="#contacto">
             <MessageCircle className="w-4 h-4" />
             Solicitar documentación
@@ -61,7 +61,7 @@ const DownloadButton = ({
     <Button 
       variant={variant} 
       size={size} 
-      className={`gap-2 ${className}`}
+      className={`gap-2 border-gold/40 hover:border-gold hover:text-gold hover:bg-gold/10 transition-all duration-300 ${className}`}
       onClick={handleDownload}
     >
       <Download className="w-4 h-4" />
